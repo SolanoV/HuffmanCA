@@ -1,0 +1,10 @@
+.backgroundPane{
+    -fx-background-color: #201b33;
+}
+.canvas{
+    -fx-background-color: white;
+    -fx-background-radius: 20;
+}
+.titleText{
+    -fx-text-fill: white;
+}

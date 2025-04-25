@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
@@ -27,7 +28,7 @@
                         <Image url="@../../Images/huffmanlogo.png" />
                      </image>
                   </ImageView>
-                  <Button maxHeight="60.0" maxWidth="60.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" styleClass="buttonSidebar">
+                  <Button fx:id="compressButton" maxHeight="60.0" maxWidth="60.0" mnemonicParsing="false" onAction="#compressButton" prefHeight="60.0" prefWidth="60.0">
                      <VBox.margin>
                         <Insets />
                      </VBox.margin>
@@ -41,8 +42,12 @@
                            </image>
                         </ImageView>
                      </graphic>
+                     <styleClass>
+                        <String fx:value="buttonSidebar" />
+                        <String fx:value="compresshl" />
+                     </styleClass>
                   </Button>
-                  <Button maxHeight="60.0" maxWidth="60.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" styleClass="buttonSidebar">
+                  <Button fx:id="decompressButton" maxHeight="60.0" maxWidth="60.0" mnemonicParsing="false" onAction="#decompressButton" prefHeight="60.0" prefWidth="60.0">
                      <VBox.margin>
                         <Insets />
                      </VBox.margin>
@@ -56,8 +61,12 @@
                            </image>
                         </ImageView>
                      </graphic>
+                     <styleClass>
+                        <String fx:value="buttonSidebar" />
+                        <String fx:value="decompresshl" />
+                     </styleClass>
                   </Button>
-                  <Button maxHeight="60.0" maxWidth="60.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" styleClass="buttonSidebar">
+                  <Button fx:id="openFileButton" maxHeight="60.0" maxWidth="60.0" mnemonicParsing="false" onAction="#openFileButton" prefHeight="60.0" prefWidth="60.0">
                      <VBox.margin>
                         <Insets />
                      </VBox.margin>
@@ -71,8 +80,12 @@
                            </image>
                         </ImageView>
                      </graphic>
+                     <styleClass>
+                        <String fx:value="openFilehl" />
+                        <String fx:value="buttonSidebar" />
+                     </styleClass>
                   </Button>
-                  <Button maxHeight="60.0" maxWidth="60.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" styleClass="buttonSidebar">
+                  <Button fx:id="saveButton" maxHeight="60.0" maxWidth="60.0" mnemonicParsing="false" onAction="#saveButton" prefHeight="60.0" prefWidth="60.0">
                      <VBox.margin>
                         <Insets />
                      </VBox.margin>
@@ -86,8 +99,12 @@
                            </image>
                         </ImageView>
                      </graphic>
+                     <styleClass>
+                        <String fx:value="buttonSidebar" />
+                        <String fx:value="savehl" />
+                     </styleClass>
                   </Button>
-                  <Button maxHeight="60.0" maxWidth="60.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" styleClass="buttonSidebar">
+                  <Button fx:id="treeViewButton" maxHeight="60.0" maxWidth="60.0" mnemonicParsing="false" onAction="#treeViewButton" prefHeight="60.0" prefWidth="60.0">
                      <font>
                         <Font size="20.0" />
                      </font>
@@ -101,6 +118,10 @@
                            </image>
                         </ImageView>
                      </graphic>
+                     <styleClass>
+                        <String fx:value="treeViewhl" />
+                        <String fx:value="buttonSidebar" />
+                     </styleClass>
                   </Button>
                </children>
                <padding>
@@ -113,50 +134,56 @@
          <children>
             <VBox prefHeight="705.0" prefWidth="1080.0" styleClass="encodedecodeTab" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="325.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <Label prefHeight="63.0" prefWidth="180.0" styleClass="text" text="Encode &amp; Decode">
+                  <Label prefHeight="42.0" prefWidth="1065.0" styleClass="titleText" text="Encode &amp; Decode">
                      <font>
-                        <Font name="Inter 18pt ExtraBold" size="20.0" />
+                        <Font size="20.0" />
                      </font>
                   </Label>
-                  <Label styleClass="text" text="Input">
+                  <Label styleClass="titleText" text="Input">
                      <VBox.margin>
                         <Insets top="10.0" />
                      </VBox.margin>
                      <font>
-                        <Font name="Inter 18pt ExtraBold" size="16.0" />
+                        <Font size="16.0" />
                      </font>
                   </Label>
-                  <TextArea prefHeight="300.0" prefWidth="938.0">
+                  <TextArea fx:id="inputTextArea" prefHeight="300.0" prefWidth="938.0" styleClass="textAreaIO">
                      <VBox.margin>
                         <Insets bottom="15.0" right="15.0" top="10.0" />
                      </VBox.margin>
+                     <font>
+                        <Font name="Inter 18pt Regular" size="16.0" />
+                     </font>
                   </TextArea>
-                  <Label styleClass="text" text="Output">
+                  <Label styleClass="titleText" text="Output">
                      <VBox.margin>
                         <Insets />
                      </VBox.margin>
                      <font>
-                        <Font name="Inter 18pt Black" size="16.0" />
+                        <Font size="16.0" />
                      </font>
                   </Label>
-                  <TextArea prefHeight="300.0" prefWidth="938.0">
+                  <TextArea fx:id="outputTextArea" editable="false" prefHeight="300.0" prefWidth="938.0" styleClass="textAreaIO">
                      <VBox.margin>
                         <Insets bottom="15.0" right="15.0" top="10.0" />
                      </VBox.margin>
+                     <font>
+                        <Font name="Inter 18pt Regular" size="16.0" />
+                     </font>
                   </TextArea>
                </children>
             </VBox>
             <VBox alignment="BOTTOM_CENTER" layoutX="1079.2" layoutY="30.4" prefHeight="715.0" prefWidth="321.0" styleClass="rightPane" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="1064.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
                <children>
-                  <Label alignment="CENTER" prefHeight="18.0" prefWidth="447.0" styleClass="text" text="Frequency Table">
+                  <Label alignment="CENTER" prefHeight="18.0" prefWidth="447.0" styleClass="titleText" text="Frequency Table">
                      <VBox.margin>
                         <Insets bottom="5.0" />
                      </VBox.margin>
                      <font>
-                        <Font name="Inter 18pt ExtraBold" size="20.0" />
+                        <Font size="20.0" />
                      </font>
                   </Label>
-                  <TableView prefHeight="544.0" prefWidth="270.0">
+                  <TableView fx:id="frequencyTable" prefHeight="544.0" prefWidth="270.0" styleClass="frequencyTable">
                      <columns>
                         <TableColumn prefWidth="85.86669766902924" text="Characters" />
                         <TableColumn prefWidth="95.73340606689453" text="Frequency" />
@@ -170,12 +197,12 @@
                      <children>
                         <HBox alignment="CENTER_LEFT" prefHeight="23.0" prefWidth="270.0" spacing="10.0">
                            <children>
-                              <Label styleClass="text" text="Original Size:">
+                              <Label styleClass="textThing" text="Original Size:">
                                  <font>
-                                    <Font name="Inter 18pt Regular" size="16.0" />
+                                    <Font size="16.0" />
                                  </font>
                               </Label>
-                              <Label styleClass="text" text="placeholder">
+                              <Label fx:id="originalSizeLabel" prefHeight="26.0" prefWidth="159.0" styleClass="textThing">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
@@ -187,12 +214,12 @@
                         </HBox>
                         <HBox alignment="BOTTOM_LEFT" prefHeight="0.0" prefWidth="270.0" spacing="10.0">
                            <children>
-                              <Label styleClass="text" text="Compressed Size:">
+                              <Label styleClass="textThing" text="Compressed Size:">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
                               </Label>
-                              <Label styleClass="text" text="placeholder">
+                              <Label fx:id="compressedSizeLabel" prefHeight="26.0" prefWidth="130.0" styleClass="textThing">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
@@ -204,12 +231,12 @@
                         </HBox>
                         <HBox alignment="BOTTOM_LEFT" prefHeight="7.0" prefWidth="270.0" spacing="10.0">
                            <children>
-                              <Label styleClass="text" text="Compressed %:">
+                              <Label styleClass="textThing" text="Compressed %:">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
                               </Label>
-                              <Label styleClass="text" text="placeholder">
+                              <Label fx:id="compressPercentLabel" prefHeight="26.0" prefWidth="146.0" styleClass="textThing">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
@@ -221,9 +248,9 @@
                         </HBox>
                         <HBox alignment="CENTER" prefHeight="39.0" prefWidth="330.0">
                            <children>
-                              <Label text="STATUS">
+                              <Label fx:id="statusLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="421.0" styleClass="titleText">
                                  <font>
-                                    <Font name="Inter 18pt Black" size="16.0" />
+                                    <Font name="Inter 18pt ExtraBold" size="20.0" />
                                  </font>
                               </Label>
                            </children>

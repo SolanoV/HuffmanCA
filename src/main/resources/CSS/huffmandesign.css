@@ -1,3 +1,12 @@
+@font-face {
+    font-family:'Inter Regular1';
+    src: url("Inter_18pt-Regular.ttf") format("truetype");
+}
+@font-face {
+    font-family: 'Inter ExtraBold1';
+    src: url("Inter_18pt-ExtraBold.ttf") format("truetype");
+}
+
 .backgroundPane{
     -fx-background-color: #201b33;/*#141425*/
 }
@@ -5,16 +14,111 @@
     -fx-background-color: #140f1c;
     -fx-background-radius: 20;
 }
-.text{
+.textThing{
     -fx-text-fill: white;
+    -fx-font-family: 'Inter Regular1';
+}
+.textAreaIO{
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+}
+.textAreaIO .content {
+    -fx-background-color: #1e1e2e;
+    -fx-background-radius: 10;
+
+}
+.textAreaIO .scroll-pane {
+    -fx-background-color: transparent;
+}
+.textAreaIO .viewport {
+    -fx-background-color: transparent;
+}
+.textAreaIO .scroll-bar:vertical, .textAreaIO .scroll-bar:horizontal {
+    -fx-background-color: #2e2e3e;
+}
+
+.textAreaIO .scroll-bar:vertical .thumb, .textAreaIO .scroll-bar:horizontal .thumb {
+    -fx-background-color: #35354a;
+}
+
+.titleText{
+    -fx-text-fill: white;
+    -fx-font-family: 'Inter ExtraBold1';
 }
 .rightPane{
     -fx-background-color: #23203c;
-    -fx-background-radius: 20;
+    -fx-background-radius: 10;
 }
 .buttonSidebar{
     -fx-background-color: transparent;
 }
 .buttonSidebar:hover{
+    -fx-background-color: #151429;
+    -fx-background-radius: 20;
+}
+.compresshl .image-view {
+    -fx-image: url("../Images/compress.png");
+}
+.compresshl:hover .image-view {
+    -fx-image: url("../Images/compresshl.png");
+}
+.decompresshl .image-view {
+    -fx-image: url("../Images/decompress.png");
+}
+.decompresshl:hover .image-view {
+    -fx-image: url("../Images/decompresshl.png");
+}
+.openFilehl .image-view {
+    -fx-image: url("../Images/open.png");
+}
+.openFilehl:hover .image-view {
+    -fx-image: url("../Images/openFilehl.png");
+}
+.savehl .image-view {
+    -fx-image: url("../Images/save.png");
+}
+.savehl:hover .image-view {
+    -fx-image: url("../Images/savehl.png");
+}
+.treeViewhl .image-view {
+    -fx-image: url("../Images/treeview.png");
+}
+.treeViewhl:hover .image-view {
+    -fx-image: url("../Images/treeViewhl.png");
+}
+.frequencyTable{
     -fx-background-color: #2e2b53;
+    -fx-background-radius: 10;
+}
+
+.frequencyTable .column-header-background {
+    -fx-background-color: #2a2748;
+}
+
+.frequencyTable .column-header {
+    -fx-background-color: transparent;
+}
+
+.frequencyTable .column-header .label {
+    -fx-text-fill: white;
+}
+.frequencyTable .table-cell{
+    -fx-background-color: #2e2b53;
+    -fx-text-fill: white;
+    -fx-alignment: CENTER;
+    -fx-font-weight: bold;
+    -fx-font-size: 16;
+}
+
+.table-view .scroll-bar * {
+    -fx-background-color: #35354a;
+}
+.switchButton{
+    -fx-background-color: #1e1e2e;
+    -fx-text-fill: white;
+    -fx-background-radius: 10;
+}
+.switchButton:hover{
+    -fx-background-color: #151429;
+    -fx-text-fill: #e5cf0c;
 }
